@@ -15,7 +15,7 @@
 export default {
   methods: {
     getToDayBook () {
-      this.$router.push({ name: 'daybook' })
+      this.$router.push({ name: 'no-entry' })
     }
   }
 }
