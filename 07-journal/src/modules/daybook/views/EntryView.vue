@@ -29,7 +29,9 @@
 
 
 
-    <Fab icon="fa-save"/>
+    <Fab
+        icon="fa-save"
+        @on:click="saveEntry"/>
 
     <img class="img-thumbnail" src="https://media.glamour.mx/photos/62ed1ccb19bc2a09ec1c2bc8/3:2/w_2970,h_1980,c_limit/dua-lipa-fluffy-brows-gettyimages-1404303105.jpg" alt="entry-picture">
 
@@ -56,6 +58,9 @@ export default {
             const entry = this.getEntryById(this.id)
             if (!entry) return this.$router.push({ name: 'no-entry' })
             this.entry = entry
+        },
+        async saveEntry () {
+            console.log('ok')
         }
     },
     data() {
