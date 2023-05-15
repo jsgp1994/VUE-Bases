@@ -14,11 +14,18 @@
 
 <script>
 import { defineAsyncComponent } from 'vue'
+import { mapActions } from 'vuex'
 
 export default {
     components: {
         Navbar: defineAsyncComponent( () => import('@/modules/daybook/components/Navbar')),
         EntryList: defineAsyncComponent( () => import('@/modules/daybook/components/EntryList'))
+    },
+    methods: {
+        ...mapActions('journal', ['loadentries'])
+    },
+    created () {
+        this.loadentries()
     }
 }
 </script>
